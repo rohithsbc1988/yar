@@ -4,18 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
 	<artifactId>anothertest</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>mule</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>mule</packaging>
 	<name>Mule anothertest Application</name>
 
-    <properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<mule.version>3.7.3</mule.version>
 		<mule.home>C:/Users/r.arvind.kulkarni/Desktop/AnypointStudio/apps</mule.home>
 		<repodir>C:/Users/r.arvind.kulkarni/.m2/repository</repodir>
-    	<mule.tools.version>1.1</mule.tools.version>
+		<mule.tools.version>1.1</mule.tools.version>
 	</properties>
 
 	<build>
@@ -26,15 +26,29 @@
 				<version>${mule.tools.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-                    <copyToAppsDirectory>true</copyToAppsDirectory>
+					<deploymentType>cloudhub</deploymentType>
+					<muleVersion>3.7.0</muleVersion>
+					<!-- This is the runtime version as it appears on the CloudHub interface -->
+					<username>rohit_kulkarni</username>
+					<password>Expert*123</password>
+					<environment>Production</environment>
 				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
-                		<groupId>org.mule.tools</groupId>
-                		<artifactId>maven-mule-plugin</artifactId>
-                		<version>1.7</version>
-                		<extensions>true</extensions>
-            		</plugin>
+				<groupId>org.mule.tools</groupId>
+				<artifactId>maven-mule-plugin</artifactId>
+				<version>1.7</version>
+				<extensions>true</extensions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.2.1</version>
@@ -63,10 +77,10 @@
 								<resource>
 									<directory>mappings/</directory>
 								</resource>
-							<resource>
-                                    <directory>src/main/api/</directory>
-                                </resource>
-                            </resources>
+								<resource>
+									<directory>src/main/api/</directory>
+								</resource>
+							</resources>
 						</configuration>
 					</execution>
 				</executions>
@@ -78,7 +92,7 @@
 	<dependencies>
 		<!-- Xml configuration -->
 		<dependency>
-        	<groupId>com.mulesoft.muleesb</groupId>
+			<groupId>com.mulesoft.muleesb</groupId>
 			<artifactId>mule-core-ee</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
@@ -104,13 +118,13 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-        	<groupId>com.mulesoft.muleesb.transports</groupId>
+			<groupId>com.mulesoft.muleesb.transports</groupId>
 			<artifactId>mule-transport-jdbc-ee</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-        	<groupId>com.mulesoft.muleesb.transports</groupId>
+			<groupId>com.mulesoft.muleesb.transports</groupId>
 			<artifactId>mule-transport-jms-ee</artifactId>
 			<version>${mule.version}</version>
 			<scope>provided</scope>
@@ -144,35 +158,35 @@
 	</dependencies>
 
 	<repositories>
-          <repository>
-            <id>Central</id>
-            <name>Central</name>
-            <url>http://repo1.maven.org/maven2/</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases Repository</name>
-            <url>http://repository.mulesoft.org/releases/</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>mulesoft-local</id>
-            <name>MuleSoft Releases Repository</name>
-            <url>file://${repodir}</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>mulesoft-release</id>
-            <name>mulesoft release repository</name>
-            <layout>default</layout>
-            <url>http://repository.mulesoft.org/releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+		<repository>
+			<id>Central</id>
+			<name>Central</name>
+			<url>http://repo1.maven.org/maven2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>mulesoft-local</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>file://${repodir}</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mulesoft-release</id>
+			<name>mulesoft release repository</name>
+			<layout>default</layout>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
