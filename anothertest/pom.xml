@@ -60,6 +60,7 @@
                                     <directory>src/main/api/</directory>
                                 </resource>
                             </resources>
+                            <copyToAppsDirectory>true</copyToAppsDirectory>
 						</configuration>
 					</execution>
 				</executions>
