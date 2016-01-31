@@ -38,7 +38,7 @@
 					<muleVersion>3.7.0</muleVersion>
 					<!-- This is the runtime version as it appears on the CloudHub interface -->
 					<username>rohit_kulkarni</username>
-					<password>Expert*123</password>
+					<password>Everest*2016</password>
 					<environment>Production</environment>
 				</configuration>
 				<executions>
@@ -187,9 +187,9 @@
 	</repositories>
 	<distributionManagement>
 		<repository>
-			<id>mulesoft-releases</id>
-			<name>MuleSoft Releases Repository</name>
-			<url>http://repository.mulesoft.org/releases/</url>
+			<id>cloud-hubs</id>
+			<name>CH</name>
+			<url>cloudhub.io</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
