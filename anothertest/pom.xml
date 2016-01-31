@@ -13,6 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<mule.version>3.7.3</mule.version>
+		<repodir>C:/Users/r.arvind.kulkarni/.m2/repository</repodir>
     	<mule.tools.version>1.1</mule.tools.version>
 	</properties>
 
