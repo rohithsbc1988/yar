@@ -26,6 +26,14 @@
 				<version>${mule.tools.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<copyToAppsDirectory>true</copyToAppsDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
 					<deploymentType>cloudhub</deploymentType>
 					<muleVersion>3.7.0</muleVersion>
 					<!-- This is the runtime version as it appears on the CloudHub interface -->
@@ -178,6 +186,10 @@
 		</repository>
 	</repositories>
 	<pluginRepositories>
+		<pluginRepository>
+			<id>mule-public</id>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
 		<pluginRepository>
 			<id>mulesoft-release</id>
 			<name>mulesoft release repository</name>
