@@ -189,7 +189,7 @@
 		<repository>
 			<id>cloud-hubs</id>
 			<name>CH</name>
-			<url>cloudhub.io</url>
+			<url>https://anypoint.mulesoft.com/cloudhub</url>
 			<layout>default</layout>
 		</repository>
 	</distributionManagement>
