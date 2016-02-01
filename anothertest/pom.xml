@@ -195,7 +195,7 @@
 		<snapshotRepository>
 			<id>mulesoft-CH</id>
 			<name>MuleSoft Releases CH</name>
-			<url>cloudhub.io</url>
+			<url>https://cloudhub.io/signup.html</url>
 			<layout>default</layout>
 		</snapshotRepository>
 	</distributionManagement>
