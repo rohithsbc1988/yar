@@ -13,9 +13,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<mule.version>3.7.3</mule.version>
-		<mule.home>C:/Users/r.arvind.kulkarni/Desktop/AnypointStudio/apps</mule.home>
 		<repodir>C:/Users/r.arvind.kulkarni/.m2/repository</repodir>
 		<mule.tools.version>1.1</mule.tools.version>
+		<cloudhub.domain>mydomain</cloudhub.domain>
 	</properties>
 
 	<build>
@@ -30,27 +30,27 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>2.0</version>
-				<configuration>
-					<deploymentType>cloudhub</deploymentType>
-					<muleVersion>3.7.0</muleVersion>
-					<!-- This is the runtime version as it appears on the CloudHub interface -->
-					<username>rohit_kulkarni</username>
-					<password>Everest*2016</password>
-					<environment>Production</environment>
-				</configuration>
+				<groupId>org.mule.tools.appkit</groupId>
+				<artifactId>mule-appkit-maven-plugin</artifactId>
+				<version>3.4</version>
+				<extensions>true</extensions>
 				<executions>
 					<execution>
-						<id>deploy</id>
+						<!-- This can be changed to any Maven phase -->
 						<phase>deploy</phase>
 						<goals>
-							<goal>deploy</goal>
+							<goal>cloudhub-deploy</goal>
 						</goals>
+						<configuration>
+							<!-- Where the app will be deployed -->
+							<domain>${cloudhub.domain}</domain>
+							<!-- Max wait time in millisecs before timeout -->
+							<maxWaitTime>180000</maxWaitTime>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<groupId>org.mule.tools</groupId>
 				<artifactId>maven-mule-plugin</artifactId>
@@ -185,14 +185,6 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
-	<distributionManagement>
-		<repository>
-			<id>cloud-hubs</id>
-			<name>CH</name>
-			<url>https://anypoint.mulesoft.com/cloudhub</url>
-			<layout>default</layout>
-		</repository>
-	</distributionManagement>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mule-public</id>
@@ -203,9 +195,11 @@
 			<name>mulesoft release repository</name>
 			<layout>default</layout>
 			<url>http://repository.mulesoft.org/releases/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>mulesoft-snapshots</id>
+			<name>MuleSoft Snapshot Repository</name>
+			<url>http://repository.mulesoft.org/snapshots/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
