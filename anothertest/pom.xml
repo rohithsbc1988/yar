@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>anothertest</artifactId>
+	<artifactId>anothertest1988</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule</packaging>
 	<name>Mule anothertest Application</name>
@@ -37,6 +37,7 @@
 				<executions>
 					<execution>
 						<!-- This can be changed to any Maven phase -->
+						<id>cloudhub.io</id>
 						<phase>deploy</phase>
 						<goals>
 							<goal>cloudhub-deploy</goal>
