@@ -37,7 +37,6 @@
 				<executions>
 					<execution>
 						<!-- This can be changed to any Maven phase -->
-						<id>cloudhub.io</id>
 						<phase>deploy</phase>
 						<goals>
 							<goal>cloudhub-deploy</goal>
