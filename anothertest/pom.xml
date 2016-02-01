@@ -185,20 +185,6 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
-	<distributionManagement>
-		<repository>
-			<id>mulesoft-releases</id>
-			<name>MuleSoft Releases Repository</name>
-			<url>http://repository.mulesoft.org/releases/</url>
-			<layout>default</layout>
-		</repository>
-		<snapshotRepository>
-			<id>mulesoft-CH</id>
-			<name>MuleSoft Releases CH</name>
-			<url>https://cloudhub.io/signup.html</url>
-			<layout>default</layout>
-		</snapshotRepository>
-	</distributionManagement>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mule-public</id>
